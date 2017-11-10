@@ -1,0 +1,34 @@
+---
+
+
+- name: check /proc/cmdline
+  lineinfile:
+    path: /proc/cmdline
+    regexp: '^(.*?default_hugepagesz=1GB hugepagesz=1GB hugepages={{ num_1GB_hugepage }}.*)$'
+    state: absent
+  check_mode: true
+  register: check_grub_conf
+  changed_when: check_grub_conf.changed != true
+
+- name: grub regex
+  lineinfile:
+    path: /etc/default/grub
+    regexp: '^(GRUB_CMDLINE_LINUX_DEFAULT=\s*\")(.*?(?=\s?default_hugepagesz=1GB hugepagesz=1GB hugepages=\d{1,3})|.*?(?=\"))(\s?default_hugepagesz=1GB hugepagesz=1GB hugepages=\d{1,3}|)([^\"]*)(\".*)$'
+    line: '\1\2 default_hugepagesz={{ default_hugepage_size }} hugepagesz={{ default_hugepage_size }} hugepages={{ num_1GB_hugepage }}\4\5'
+    backrefs: true
+  notify: 'grub restart system'
+  when: check_grub_conf.changed
+
+- name: make hugepage mount directory
+  file:
+    path: /mnt/huge_1GB
+    state: directory
+    mode: 0755
+
+- name: add fstab entry
+  lineinfile:
+    path: /etc/fstab
+    regexp: ^(\s*nodev\s+/mnt/huge_1GB\s+hugetlbfs\s+pagesize=1GB\s+0\s+0\s*)
+    line: 'nodev /mnt/huge_1GB hugetlbfs pagesize=1GB 0 0'
+  notify: 'grub restart system'
+

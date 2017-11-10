@@ -1,0 +1,31 @@
+---
+
+- include: copy_files.yml
+
+- name: Install docker
+  apt: 
+    name: docker.io
+    state: latest
+
+- name: start docker service
+  service:
+    name: docker
+    state: started
+
+- name: build docker container
+  docker_image:
+    name: test_container
+    path: /tmp
+    state: present
+
+- name: run docker container
+  docker_container:
+    name: test_container
+    state: started
+
+- name: add docker container to inventory
+  add_host:
+    name: test_container
+    ansible_connection: docker
+    ansible_docker_extra_args: "-H tcp://10.1.1.9:19019"
+    groups: containers

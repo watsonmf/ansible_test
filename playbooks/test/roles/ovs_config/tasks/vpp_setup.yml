@@ -1,0 +1,16 @@
+---
+
+- name: 'vpp test repo'
+  apt_repository:
+    repo: 'deb [trusted=yes] https://nexus.fd.io/content/repositories/fd.io.stable.1710.ubuntu.xenial.main/ ./'
+    state: present
+    filename: 'vpp'
+    update_cache: yes
+
+- name: 'install vpp'
+  apt:
+    name: '{{ item }}'
+    state: present
+  with_items: '{{ vpp_list }}'
+
+

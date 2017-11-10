@@ -1,0 +1,9 @@
+---
+
+- name: ping all
+  ping:
+
+- name: Install apache2
+  apt: 
+    name: apache2
+    state: latest

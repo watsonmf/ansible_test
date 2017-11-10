@@ -1,0 +1,30 @@
+---
+
+
+# Check Azure-specific edge case
+- name: check azure grub config
+  stat:
+    path: "{{ azure_grub_config }}"
+  register: azure_stat_result
+
+- name: fix azure grub config
+  lineinfile:
+    path: "{{ azure_grub_config }}"
+    regexp: '^GRUB_CMDLINE_LINUX_DEFAULT=\"[^\"]+\"'
+    state: absent
+  when: azure_stat_result.stat.exists == true
+
+- name: check hugepage flag
+  lineinfile:
+    path: /proc/cpuinfo
+    regexp: '^(?:.*?pdpe1gb.*)'
+    state: absent
+  check_mode: true
+  register: check_cpuinfo_flags
+  changed_when: false
+
+- include: hugepage_1gb.yml
+  when: check_cpuinfo_flags.found != 0 
+
+- include: hugepage_2mb.yml
+  when: check_cpuinfo_flags.found == 0

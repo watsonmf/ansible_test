@@ -1,0 +1,16 @@
+---
+
+- name: Install net-tools
+  apt: 
+    name: net-tools
+    state: latest
+
+- name: Install packages
+  apt:
+    name:
+      - 'git'
+      - 'vim-nox'
+      - 'htop'
+      - 'sudo'
+      - 'iperf3'
+    state: latest

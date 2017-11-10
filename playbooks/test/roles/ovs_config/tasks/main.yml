@@ -1,0 +1,52 @@
+---
+
+- name: install OVS packages
+  apt:
+    name: openvswitch-switch-dpdk
+    state: latest
+
+- name: update alternatives - ovs
+  alternatives:
+    name: ovs-vswitchd
+    path: /usr/lib/openvswitch-switch-dpdk/ovs-vswitchd-dpdk
+    priority: 200
+  register: alternatives_result
+
+- name: restart OVS service
+  service:
+    name: openvswitch-switch
+    state: restarted
+  when: alternatives_result.changed == true
+
+- name: start OVS service
+  service:
+    name: openvswitch-switch
+    state: started
+    enabled: true
+  when: alternatives_result.changed == false
+
+- name: add OVS dpdk options
+  command: 'ovs-vsctl -- set Open_vSwitch . other_config:{{ item }}'
+  with_items: '{{ ovs_other_config }}'
+
+- name: build ovs-bridge main
+  openvswitch_bridge:
+    bridge: '{{ item.bridge }}'
+    state: '{{ item.state }}'
+    set: 'bridge {{ item.bridge }} {{ item.set }}'
+  with_items: '{{ ovs_bridges }}'
+  when: ovs_bridges is defined
+
+- name: ovs dpdkvhostuser port test0
+  openvswitch_port:
+    bridge: '{{ item[0].bridge }}'
+    port: '{{ item[1].name }}'
+    state: '{{ item[1].state }}'
+    set: 'Interface {{ item[1].name }} {{ item[1].set }}'
+  with_subelements:
+    - '{{ ovs_bridges }}'
+    - ports
+    - { skip_missing: true }
+  when: ovs_bridges is defined
+
+- import_tasks: 'vpp_setup.yml'

@@ -1,0 +1,24 @@
+---
+
+ovs-settings:
+
+ovs_other_config:
+  - 'dpdk-init=true'
+  - 'dpdk-socket-mem=1024'
+
+ovs_bridges: 
+- bridge: 'main'
+  set: 'datapath_type=netdev protocols=OpenFlow10,OpenFlow11,OpenFlow12,OpenFlow13,OpenFlow14,OpenFlow15'
+  state: 'present'
+  ports:
+  - name: 'test0'
+    state: 'present'
+    set: 'type=dpdkvhostuser ofport_request=1'
+  - name: 'test1'
+    state: 'present'
+    set: 'type=dpdkvhostuser ofport_request=5'
+
+vpp_list:
+  - 'vpp-lib'
+  - 'vpp'
+  - 'vpp-plugins'

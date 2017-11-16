@@ -7,23 +7,28 @@
 #    - common
 
 - name: setup hugepages
-  hosts: hugepage_test
+  hosts: ovs-server
   become: true
   roles:
     - hugepage_config
 
 - name: configure OVS-dpdk
-  hosts: hugepage_test
+  hosts: ovs-server
   become: true
   roles:
     - ovs_config
 
-      #- name: build docker containers
-      #  hosts: docker-host
-      #  become: true
-      #  roles:
-      # - docker-host
+- name: build docker containers
+  hosts: ovs-server
+  become: true
+  roles:
+    - docker-host
 
+- name: configure VPP on containers
+  hosts: containers
+  become: true
+  roles:
+    - vpp_config
       #- name: basic container config to ensure ansible can run on containers
   #  hosts: containers
   #  gather_facts: false

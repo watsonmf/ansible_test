@@ -14,18 +14,21 @@
 
 - name: build docker container
   docker_image:
-    name: test_container
+    name: '{{ item }}'
     path: /tmp
     state: present
-
+  with_items: '{{ containers }}'
+  
 - name: run docker container
   docker_container:
-    name: test_container
+    name: '{{ item }}'
     state: started
-
+  with_items: '{{ containers }}'
+  
 - name: add docker container to inventory
   add_host:
-    name: test_container
+    name: '{{ item }}'
     ansible_connection: docker
     ansible_docker_extra_args: "-H tcp://10.1.1.9:19019"
     groups: containers
+  with_items: '{{ containers }}'

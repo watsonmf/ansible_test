@@ -1,0 +1,14 @@
+---
+
+- name: copy vpp deb files
+  copy:
+    src: '{{ item }}.deb'
+    dest: '/tmp/{{ item }}.deb'
+  with_items: '{{ vpp_list }}'
+
+- name: install vpp packages
+  apt:
+    deb: '/tmp/{{ item }}.deb'
+    force: true
+  with_items: '{{ vpp_list }}'
+

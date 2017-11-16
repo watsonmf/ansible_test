@@ -1,0 +1,7 @@
+---
+
+vpp_list: 
+  - 'vpp-dpdk-dkms'
+  - 'vpp-lib'
+  - 'vpp'
+  - 'vpp-plugins'

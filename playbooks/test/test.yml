@@ -7,13 +7,17 @@
 #    - common
 
 - name: setup hugepages
-  hosts: ovs-server
+  hosts: 
+  - ovs-server
+  - ubuntu_nodes
   become: true
   roles:
     - hugepage_config
 
 - name: configure OVS-dpdk
-  hosts: ovs-server
+  hosts: 
+  - ovs-server
+  - ubuntu_nodes
   become: true
   roles:
     - ovs_config
@@ -26,9 +30,15 @@
 
 - name: configure VPP on containers
   hosts: containers
+  roles:
+    - vpp_config
+
+- name: config VPP on server
+  hosts: ubuntu_nodes
   become: true
   roles:
     - vpp_config
+
       #- name: basic container config to ensure ansible can run on containers
   #  hosts: containers
   #  gather_facts: false

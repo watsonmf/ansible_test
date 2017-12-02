@@ -1,7 +1,6 @@
 
 [ubuntu_nodes]
 10.1.1.5
-10.1.1.6
 
 [hugepage_test]
 10.1.1.10
@@ -10,6 +9,6 @@
 10.1.1.9
 
 [ovs-server]
-10.1.1.5
+10.1.1.6
 
 [containers]

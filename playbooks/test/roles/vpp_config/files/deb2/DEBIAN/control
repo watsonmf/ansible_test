@@ -1,0 +1,13 @@
+Package: vpp
+Version: 17.10-release
+Architecture: amd64
+Maintainer: Cisco OpenVPP Packaging Team <bogus.address@cisco.com>
+Installed-Size: 1553
+Depends: vpp-lib (= 17.10-release), libc6 (>= 2.14), init-system-helpers (>= 1.18~)
+Section: net
+Priority: extra
+Description: Vector Packet Processing--executables
+ This package provides VPP executables: vpp, vpp_api_test, vpp_json_test
+ vpp - the vector packet engine
+ vpp_api_test - vector packet engine API test tool
+ vpp_json_test - vector packet engine JSON test tool

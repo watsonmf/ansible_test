@@ -2,6 +2,16 @@
 
 - include: copy_files.yml
 
+- name: install pip
+  apt:
+    name: python-pip
+    state: latest
+
+- name: pip install docker-py
+  pip:
+    name: docker-py
+    state: present
+
 - name: Install docker
   apt: 
     name: docker.io
@@ -16,12 +26,17 @@
   docker_image:
     name: '{{ item }}'
     path: /tmp
+    force: true
     state: present
   with_items: '{{ containers }}'
   
 - name: run docker container
   docker_container:
     name: '{{ item }}'
+    image: '{{ item }}:latest'
+    volumes: '/run/openvswitch:/run/openvswitch:rw'
+    capabilities: 'ALL'
+    privileged: true
     state: started
   with_items: '{{ containers }}'
   
@@ -29,6 +44,6 @@
   add_host:
     name: '{{ item }}'
     ansible_connection: docker
-    ansible_docker_extra_args: "-H tcp://10.1.1.9:19019"
+    ansible_docker_extra_args: "-H tcp://10.1.1.6:19019"
     groups: containers
   with_items: '{{ containers }}'

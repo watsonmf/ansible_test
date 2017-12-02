@@ -2,6 +2,7 @@
 
 vpp_list: 
   - 'vpp-dpdk-dkms'
+  - 'vpp-dpdk-dev'
   - 'vpp-lib'
-  - 'vpp'
+  - 'vpp2'
   - 'vpp-plugins'

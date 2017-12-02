@@ -1,0 +1,546 @@
+\.path = 
+adjacency counters
+api trace
+bfd key del
+bfd key set
+bfd udp echo-source del
+bfd udp echo-source set
+bfd udp session add
+bfd udp session auth activate
+bfd udp session auth deactivate
+bfd udp session del
+bfd udp session mod
+bfd udp session set-flags
+binary-api
+builtin uri bind
+builtin uri unbind
+cj
+classify session
+classify table
+clear
+clear acl-plugin sessions
+clear api histogram
+clear counters
+clear errors
+clear fib walk
+clear hardware-interfaces
+clear interface tag
+clear interfaces
+clear ioam rewrite
+clear ioam-trace profile
+clear ipsec counters
+clear l2fib
+clear node counters
+clear pot profile
+clear runtime
+clear session
+clear sr localsid counters
+clear trace
+clear vxlan-gpe-ioam rewrite
+configure policer
+cop interface
+cop whitelist
+create bridge-domain
+create gre tunnel
+create gtpu tunnel
+create host-interface
+create ipsec gre tunnel
+create ipsec tunnel
+create l2tpv3 tunnel
+create loopback interface
+create memif
+create netmap
+create packet-generator
+create pppoe session
+create pppoe tap
+create sub-interfaces
+create vhost-user
+create vxlan tunnel
+create vxlan-gpe tunnel
+debug vhost-user
+delete host-interface
+delete loopback interface
+delete memif
+delete netmap
+delete sub-interface
+delete vhost-user
+disable ip6 interface
+enable ip6 interface
+event-logger clear
+event-logger resize
+event-logger restart
+event-logger save
+event-logger stop
+exec
+flowprobe feature add-del
+flowprobe params
+gpe
+gpe encap
+gpe entry
+gpe iface
+gpe native-forward
+history
+ikev2 initiate
+ikev2 profile
+ila entry
+ila interface
+interface
+ip
+ip mroute
+ip probe-neighbor
+ip route
+ip sticky classify
+ip syn filter
+ip table
+ip urpf-accept
+ip virtual
+ip6
+ip6 nd
+ip6 table
+ipfix classify table
+ipfix flush
+ipsec policy
+ipsec sa
+ipsec spd
+l2 rewrite entry
+l2fib add
+l2fib del
+l2fib flush-mac all
+l2fib flush-mac bridge-domain
+l2fib flush-mac interface
+lb as
+lb conf
+lb vip
+lisp
+lisp adjacency
+lisp eid-table
+lisp eid-table map
+lisp locator
+lisp locator-set
+lisp map-register
+lisp map-request itr-rlocs
+lisp map-request mode
+lisp map-resolver
+lisp map-server
+lisp pitr
+lisp remote-mapping
+lisp rloc-probe
+lisp use-petr
+loopback create-interface
+loopback delete-interface
+map add domain
+map add rule
+map del domain
+map params fragment
+map params fragment ignore-df
+map params icmp source-address
+map params icmp6 unreachables
+map params pre-resolve
+map params reassembly
+map params security-check
+map params security-check fragments
+map params traffic-class
+memory-trace
+mpls local-label
+mpls table
+mpls tunnel
+nat ipfix logging
+nat44 add address
+nat44 add interface address
+nat44 add load-balancing static mapping
+nat44 add static mapping
+nat44 deterministic add
+nat44 deterministic close session in
+nat44 deterministic close session out
+nat44 deterministic forward
+nat44 deterministic reverse
+nat64 add pool address
+nat64 add prefix
+nat64 add static bib
+oam
+one
+one adjacency
+one eid-table
+one eid-table map
+one l2 arp
+one locator
+one locator-set
+one map-register
+one map-register fallback-threshold
+one map-register ttl
+one map-request itr-rlocs
+one map-request mode
+one map-resolver
+one map-server
+one ndp
+one nsh-mapping
+one pitr
+one remote-mapping
+one rloc-probe
+one statistics
+one statistics flush
+one use-petr
+p2p_ethernet 
+packet-generator
+packet-generator capture
+packet-generator configure
+packet-generator delete
+packet-generator disable-stream
+packet-generator enable-stream
+packet-generator new
+pcap drop trace
+pcap tx trace
+ping
+quit
+renumber interface
+restart
+session
+session replay fifo
+set
+set acl-plugin
+set api-trace [on][on tx][on rx][off][free][debug on][debug off]
+set bridge-domain arp entry
+set bridge-domain arp term
+set bridge-domain flood
+set bridge-domain forward
+set bridge-domain learn
+set bridge-domain mac-age
+set bridge-domain rewrite
+set bridge-domain uu-flood
+set dhcp client
+set dhcp option-82 vss
+set dhcp proxy
+set dhcpv6 proxy
+set dhcpv6 vss
+set dpdk interface descriptors
+set dpdk interface hqos pipe
+set dpdk interface hqos pktfield
+set dpdk interface hqos placement
+set dpdk interface hqos subport
+set dpdk interface hqos tctbl
+set fib walk histogram elements size
+set fib walk quota
+set flow classify
+set ikev2 local key
+set interface
+set interface acl output
+set interface feature
+set interface handoff
+set interface hw-class
+set interface input acl
+set interface ip
+set interface ip address
+set interface ip gtpu-bypass
+set interface ip source-and-port-range-check
+set interface ip source-check
+set interface ip table
+set interface ip vxlan-bypass
+set interface ip vxlan-gpe-bypass
+set interface ip6 gtpu-bypass
+set interface ip6 l2tpv3
+set interface ip6 table
+set interface ip6 vxlan-bypass
+set interface ip6 vxlan-gpe-bypass
+set interface ipsec key
+set interface ipsec spd
+set interface l2 bridge
+set interface l2 efp-filter
+set interface l2 flood
+set interface l2 forward
+set interface l2 input classify
+set interface l2 learn
+set interface l2 output classify
+set interface l2 pbb-tag-rewrite
+set interface l2 rewrite
+set interface l2 tag-rewrite
+set interface l2 xconnect
+set interface l2 xcrw
+set interface l3
+set interface lldp
+set interface mac address
+set interface mpls
+set interface mtu
+set interface nat44
+set interface nat64
+set interface promiscuous
+set interface proxy-arp
+set interface rx-mode
+set interface rx-placement
+set interface span
+set interface state
+set interface tag
+set interface unnumbered
+set ioam analyse
+set ioam export ipfix
+set ioam ip6 cache
+set ioam ip6 sr-tunnel-select
+set ioam rewrite
+set ioam-trace profile
+set ip arp
+set ip classify
+set ip flow-hash
+set ip source-and-port-range-check
+set ip6 classify
+set ip6 flow-hash
+set ip6 link-local address
+set ip6 nd proxy
+set ip6 neighbor
+set ipfix classify stream
+set ipfix exporter
+set ipsec sa
+set l2tpv3 tunnel cookie
+set li
+set lldp
+set nat workers
+set nat44 deterministic timeout
+set nat64 timeouts
+set policer classify
+set pot profile
+set pot profile-active
+set punt
+set significant error
+set sr encaps source
+set terminal ansi
+set terminal history
+set terminal pager
+set udp-ping
+set udp-ping export-ipfix
+set vxlan-gpe-ioam
+set vxlan-gpe-ioam export ipfix
+set vxlan-gpe-ioam rewrite
+set vxlan-gpe-ioam-transit
+show
+show acl-plugin
+show acl-plugin macip
+show adj
+show adj nbr
+show api
+show api clients
+show api dump
+show api histogram
+show api message-table
+show api plugin
+show api ring-stats
+show api trace-status
+show app
+show arp-nd-event registrations
+show bfd
+show bridge-domain
+show buffers
+show cdp
+show classify flow
+show classify policer
+show classify tables
+show cli
+show cli-sessions
+show cpu
+show crypto device mapping
+show dhcp client
+show dhcp option-82-address interface
+show dhcp proxy
+show dhcp vss
+show dhcpv6 link-address interface
+show dhcpv6 proxy
+show dhcpv6 vss
+show dpdk buffer
+show dpdk hqos queue
+show dpdk interface hqos
+show dpdk interface hqos placement
+show dpdk version
+show dpo memory
+show errors
+show event-logger
+show features
+show fib entry
+show fib memory
+show fib path-lists
+show fib paths
+show fib uRPF
+show fib walk
+show flowprobe statistics
+show flowprobe table
+show frame-queue
+show frame-queue histogram
+show gdb
+show gpe adjacency
+show gpe encap
+show gpe entry
+show gpe interface
+show gpe native-forward
+show gpe sub-interface
+show gpe tenant
+show gpe tunnel
+show gre tunnel
+show gtpu tunnel
+show hardware-interfaces
+show ikev2 profile
+show ikev2 sa
+show ila entries
+show inacl
+show interface
+show interface rx-placement
+show interface span
+show ioam analyse 
+show ioam e2e 
+show ioam ip6 cache
+show ioam pot
+show ioam summary
+show ioam trace
+show ioam vxlan-gpe trace
+show ioam-trace profile
+show ip
+show ip arp
+show ip fib
+show ip local
+show ip mfib
+show ip source-and-port-range-check
+show ip6
+show ip6 fib
+show ip6 interface
+show ip6 local
+show ip6 mfib
+show ip6 neighbors
+show ipsec
+show ipsec gre tunnel
+show l2 rewrite entries
+show l2 rewrite interfaces
+show l2fib
+show l2patch
+show l2tpv3
+show l2xcrw
+show lb
+show lb vips
+show lisp adjacencies
+show lisp eid-table
+show lisp eid-table map
+show lisp locator-set
+show lisp map-request itr-rlocs
+show lisp map-request mode
+show lisp map-resolvers
+show lisp petr
+show lisp pitr
+show lisp status
+show lldp
+show load-balance
+show load-balance-map
+show map domain
+show map fragments
+show map stats
+show memif
+show memory
+show mfib entry
+show mfib interface
+show mfib itf flags
+show mfib route flags
+show mode
+show mpls fib
+show mpls tunnel
+show nat44
+show nat64 bib
+show nat64 interfaces
+show nat64 pool
+show nat64 prefix
+show nat64 session table
+show nat64 timeouts
+show node counters
+show oam
+show one adjacencies
+show one eid-table
+show one eid-table map
+show one l2 arp entries
+show one locator-set
+show one map-register fallback-threshold
+show one map-register state
+show one map-register ttl
+show one map-request itr-rlocs
+show one map-request mode
+show one map-resolvers
+show one map-servers
+show one ndp entries
+show one petr
+show one pitr
+show one rloc state
+show one statistics details
+show one statistics status
+show one status
+show packet-generator
+show pci
+show physmem
+show plugins
+show policer
+show policer pools
+show pot profile
+show pppoe fib
+show pppoe session
+show replicate
+show runtime
+show segment-manager
+show session
+show session fifo trace
+show sixrd domain
+show sixrd stats
+show sr localsids
+show sr localsids behaviors
+show sr mpls policies
+show sr mpls steering policies
+show sr policies
+show sr steering policies
+show sticky classify
+show tcp punt
+show tcp scoreboard trace
+show terminal
+show threads
+show trace
+show udp-ping summary
+show unix-errors
+show version
+show vhost-user
+show vlib frame-allocation
+show vlib graph
+show vxlan tunnel
+show vxlan-gpe
+sixrd add domain
+sixrd del domain
+sr localsid
+sr mpls policy
+sr mpls steer
+sr policy
+sr steer
+srp create-interfaces
+tap connect
+tap delete
+tap modify
+tcp replay scoreboard
+tcp src-address
+test
+test classify
+test counters
+test crash
+test dpdk buffer
+test dpdk buffers
+test elog sample
+test fib
+test fib-walk-process
+test frame-queue nelts
+test frame-queue threshold
+test heap-validate
+test http server
+test ip6 link
+test l2fib
+test l2patch
+test lookup
+test mfib
+test node serialize
+test one nsh
+test one nsh add-dummy-decap-node
+test policer
+test proxy server
+test route
+test sleep
+test tcp
+test tcp clients
+test tcp server
+trace
+trace add
+trace filter
+trace frame-queue

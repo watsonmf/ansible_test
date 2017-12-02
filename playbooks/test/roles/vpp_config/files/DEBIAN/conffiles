@@ -1,0 +1,4 @@
+/etc/bash_completion.d/vppctl_completion
+/etc/init/vpp.conf
+/etc/sysctl.d/80-vpp.conf
+/etc/vpp/startup.conf

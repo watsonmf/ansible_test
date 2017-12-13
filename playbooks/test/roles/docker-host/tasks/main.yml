@@ -34,7 +34,9 @@
   docker_container:
     name: '{{ item }}'
     image: '{{ item }}:latest'
-    volumes: '/run/openvswitch:/run/openvswitch:rw'
+    volumes: 
+    - '/run/openvswitch:/run/openvswitch:rw'
+    - '/mnt/huge_1GB:/mnt/huge_1GB'
     capabilities: 'ALL'
     privileged: true
     state: started

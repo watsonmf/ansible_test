@@ -4,6 +4,6 @@ grub_config: '/etc/default/grub'
 azure_grub_config: '/etc/default/grub.d/50-cloudimg-settings.cfg'
 
 default_hugepage_size: '1GB'
-num_1GB_hugepage: 6
+num_1GB_hugepage: 50
 
 num_2MB_hugepage: 1024

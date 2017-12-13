@@ -28,16 +28,16 @@
   roles:
     - docker-host
 
-- name: configure VPP on containers
-  hosts: containers
-  roles:
-    - vpp_config
+      #- name: configure VPP on containers
+      #  hosts: containers
+      #  roles:
+      #    - vpp_config
 
-- name: config VPP on server
-  hosts: ubuntu_nodes
-  become: true
-  roles:
-    - vpp_config
+      #- name: config VPP on server
+      #  hosts: ubuntu_nodes
+      #  become: true
+      # roles:
+      #- vpp_config
 
       #- name: basic container config to ensure ansible can run on containers
   #  hosts: containers
